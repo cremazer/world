@@ -11,3 +11,6 @@
     * Dependencies
         * Spring Web
         * Thymeleaf (template engines for view)
+    
+* Add gradle
+    * spring-boot-devtools

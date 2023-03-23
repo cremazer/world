@@ -4,9 +4,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class HelloController {
+
+    /**
+     * Web browser call url
+     * http://localhost:8080/hello
+     */
     @GetMapping("/hello")
     public String hello(Model model) {
         String name = "Lucky";
@@ -14,6 +20,13 @@ public class HelloController {
         return "hello";
     }
 
+    /**
+     * Web browser call url
+     * http://localhost:8080/hello-there?team=Dev&name=Lucky
+     * @param team Dev
+     * @param name Lucky
+     * @return viewName
+     */
     @GetMapping("/hello-there")
     public String helloThere(
             @RequestParam("team") String team,
@@ -22,5 +35,20 @@ public class HelloController {
         model.addAttribute("team", team);
         model.addAttribute("name", name);
         return "hello-there";
+    }
+
+    /**
+     * Web browser call url
+     * http://localhost:8080/hello-string?team=Dev&name=Lucky
+     * @param team Dev
+     * @param name Lucky
+     * @return String
+     */
+    @GetMapping("/hello-string")
+    @ResponseBody
+    public String helloThere(
+            @RequestParam("team") String team,
+            @RequestParam("name") String name) {
+        return team + "/" + name;
     }
 }
