@@ -14,3 +14,4 @@
     
 * Add gradle
     * spring-boot-devtools
+    * lombok
