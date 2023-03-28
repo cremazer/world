@@ -11,7 +11,11 @@
     * Dependencies
         * Spring Web
         * Thymeleaf (template engines for view)
-    
+
+* Database
+    * [H2 install](https://www.h2database.com/html/main.html)
+
+
 * Add gradle
     * spring-boot-devtools
     * lombok
