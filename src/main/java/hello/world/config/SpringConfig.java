@@ -1,7 +1,7 @@
 package hello.world.config;
 
 
-import hello.world.ropository.JdbcMemberRepository;
+import hello.world.ropository.JdbcTemplateMemberRepository;
 import hello.world.ropository.MemberRepository;
 import hello.world.service.MemberService;
 import javax.sql.DataSource;
@@ -21,7 +21,7 @@ public class SpringConfig {
 
     @Bean
     public MemberRepository memberRepository() {
-        return new JdbcMemberRepository(dataSource);
+        return new JdbcTemplateMemberRepository(dataSource);
     }
 
     @Bean
